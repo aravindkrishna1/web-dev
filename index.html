@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chessboard</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+ 
+  .chessboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+    border: 2px solid #333;
+  }
+ 
+  .square {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+  }
+ 
+  .white {
+    background-color: #f0d9b5;
+  }
+ 
+  .black {
+    background-color: #b58863;
+  }
+</style>
+</head>
+<body>
+<div class="chessboard">
+  <!-- JavaScript will populate this with squares -->
+</div>
+ 
+<script>
+  // Create an 8x8 chessboard dynamically
+  const boardSize = 8;
+  const chessboard = document.querySelector('.chessboard');
+ 
+  // Loop through rows
+  for (let row = 0; row < boardSize; row++) {
+    // Loop through columns
+    for (let col = 0; col < boardSize; col++) {
+      // Create a square element
+      const square = document.createElement('div');
+      square.classList.add('square');
+ 
+      // Determine if square should be white or black
+      if ((row + col) % 2 === 0) {
+        square.classList.add('white');
+      } else {
+        square.classList.add('black');
+      }
+ 
+      chessboard.appendChild(square);
+    }
+  }
+</script>
+</body>
+</html>

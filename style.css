@@ -1,0 +1,16 @@
+/* styles.css */
+.chessboard {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    width: 400px;
+    height: 400px;
+}
+
+.chessboard div {
+    background-color: #eee;
+}
+
+.chessboard div:nth-child(odd) {
+    background-color: #ccc;
+}
